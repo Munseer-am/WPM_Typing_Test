@@ -73,7 +73,10 @@ def main(stdscr):
 		stdscr.addstr(2, 0, "You completed the text! Press any key to continue...")
 		key = stdscr.getkey()
 		
-		if ord(key) == 27:
+		try:
+			if ord(key) == 27:
+				break
+		except TypeError:
 			break
 
 wrapper(main)
